@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tweet Classifier</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <h1>"Welcome to Sena accountancy"</h1>
+<!-- Enter text of tweets to classify text-->
+<div class="get_text">
+    <form action="{{ url_for('predict')}}" method="post" enctype="multipart/form-data">
+        <div class="content">
+            <div class="vertical-center">
+        <label for="myfile">Select a file:</label>
+        <input type="file" id="myfile" name="myfile"><br><br>
+        <br>
+        <input type="submit" value="predict" class="submit" placeholder="Enter text of a tweet" required>
+        <br>
+    </form>
+</div>
+<!-- Display the results of the classification -->
+<div>
+    <ul>
+        {{tweet_list}}
+    </ul>
+</div>
+ 
+</body>
+</html>
